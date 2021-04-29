@@ -1,0 +1,46 @@
+/* 
+Fonts by Google fonts,
+https://fonts.google.com
+*/
+
+/* Regular fonts */
+@font-face {
+    font-family: "Lato";
+    src: url("/css/fonts/Lato/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("/css/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Ranchers";
+    src: url("/css/fonts/Ranchers/Ranchers-Regular.ttf") format("truetype");
+}
+
+/* Special fonts (italic and bold) */
+
+@font-face {
+    font-family: "Lato italic";
+    src: url("/css/fonts/Lato/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato bold";
+    src: url("/css/fonts/Lato/Lato-Black.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato bold italic";
+    src: url("/css/fonts/Lato/Lato-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto italic";
+    src: url("/css/fonts/Roboto/Roboto-Italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Roboto bold";
+    src: url("/css/fonts/Roboto/Roboto-Black.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Roboto bold italic";
+    src: url("/css/fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype");
+}

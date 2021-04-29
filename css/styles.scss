@@ -1,0 +1,344 @@
+/* 
+    FuchsCrafters Homepage : Stylesheets 
+    Licensed under the MIT license
+    styles.scss by fuchscrafter.de
+    @2021 fuchscrafter.de
+*/
+
+// RESETS import
+@import url('resets.css');
+
+// Fonts from https://fonts.google.com/share?selection.family=Lato%7CRanchers%7CRoboto
+@import url('font-familys.css');
+
+// -- Variables --
+
+// -- Selection Variables --
+$selection-color-txt: rgba(255, 255, 158, 0.8);
+$selection-color-img: rgba(255, 255, 158, 0.09);
+
+// - Boolean variables -
+$txt-transitions: true;
+
+// - Font familys -
+$header-font: 'Ranchers', 'Roboto', 'Lato', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$paragraph-font: 'Lato', 'Roboto', Arial, Helvetica, sans-serif;
+$bold-font: 'Lato bold', 'Roboto bold', Impact, 'Arial Narrow Bold', Arial, Helvetica, sans-serif;
+$bold-and-cursive-font: 'Lato bold italic', 'Roboto bold italic', cursive, Arial, Helvetica, sans-serif;
+$cursive-and-bold-font: 'Lato bold italic', 'Roboto bold italic', Impact, 'Arial Narrow Bold', Arial, Helvetica, sans-serif;
+$cursive-font: 'Lato italic', 'Roboto italic', cursive, Arial, Helvetica, sans-serif;
+
+
+
+// -- Selection colors (easy to forget) --
+::selection 	 	{background: $selection-color-txt;}
+::-moz-selection 	{background: $selection-color-txt;}
+img::selection 		{background: $selection-color-img;}
+img::-moz-selection	{background: $selection-color-img;}
+body {-webkit-tap-highlight-color: $selection-color-txt;}
+
+
+// -- Typografic presets --
+// fonts, margin and padding and this stuff
+body {
+    font-family: $paragraph-font;
+    margin: 5rem;
+}
+h1, h2, h3, h4, .gigantic, .huge {
+    color: rgb(41, 41, 41);
+    font-family: $header-font;
+    margin: 3vh;
+}
+p {
+    margin: 2.6vh;
+}
+
+// font sizes
+.gigantic {
+    font-size: 9vh;
+    text-transform: uppercase;
+}
+h1, .huge {
+    font-size: 5.5vh;
+}
+h2 {
+    font-size: 3.5vh;
+}
+h3 {
+    font-size: 3vh;
+}
+h4 {
+    font-size: 2.5vh;
+}
+p, a {
+    font-size: 2vh;
+}
+@media screen and (min-width:45cm) { // computer need smaller font sizes
+	p, a {
+        font-size: 1.7vh;
+    }
+}
+
+// anchor presets 
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a:active {
+    color:#ff3434;
+}
+@if $txt-transitions {
+    a {
+        color: black;
+        text-decoration: none;
+        -webkit-transition: all 0.1s 0s ease;
+        transition: all 0.1s 0s ease;
+    }
+    a:hover {
+        text-decoration: underline;
+        -webkit-transition: all 0.1s 0s ease;
+        transition: all 0.1s 0s ease;
+    }
+    a:active {
+        color:#ff3434;
+        -webkit-transition: all 0.1s 0s ease;
+        transition: all 0.1s 0s ease;
+    }
+}
+
+// special presets (small, italic, bold)
+b {
+    font-family: $bold-font;
+    i {
+        font-family: $bold-and-cursive-font;
+    }
+}
+i {
+    font-family: $cursive-font;
+    b {
+        font-family: $cursive-and-bold-font;
+    }
+}
+small {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 1.5vh;
+    -webkit-transition: all 0.1s 0s ease;
+    transition: all 0.1s 0s ease;
+}
+@if $txt-transitions {
+    small:active, small:hover { // only modern browsers are supportet; sorry IE user xD
+        -webkit-transition: all 0.1s 0s ease;
+        transition: all 0.1s 0s ease;
+        font-size: 1.7vh;
+    }
+}
+
+// align classes
+.align-center {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.align-right {
+    text-align: right;
+    align-items: right;
+    align-content: right;
+}
+.align-left {
+    text-align: left;
+    align-items: left;
+    align-content: left;
+}
+.align-start {
+    text-align: start;
+    align-items: start;
+    align-content: start;
+}
+.align-end {
+    text-align: end;
+    align-items: end;
+    align-content: end;
+}
+
+// forms
+$form-border: 1.5px solid rgba(8, 8, 8, 0.575);
+$form-items-margin: 1rem;
+$form-font: 'Roboto', 'Lato', Arial, Helvetica, sans-serif;
+
+.form {
+    .txtfield{
+        border: $form-border;
+        font-family:  $form-font;
+        margin-right: $form-items-margin;
+    }
+    .txtfield.correct {
+        font-family: 'Roboto bold', $form-font;
+        border:3px solid rgba(72, 255, 0, 0.356);
+        color: limegreen;
+    }
+    .txtfield.wrong {
+        font-family: 'Roboto bold', $form-font;
+        border: 3px solid rgba(255, 0, 0, 0.356);
+        color: red;
+    }
+    .txtfield.correct:hover, .txtfield.wrong:hover {
+        border-width: 3px;
+    }
+    .txtfield:hover{
+        border: $form-border;
+        border-color: rgba(8, 8, 8, 0.356);
+    }
+    .txtfield.txtfield-disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .submit{
+        border: $form-border;
+        font-family:  $form-font;
+        margin-right: $form-items-margin;
+        cursor: pointer;
+    }
+    .password{
+        border: $form-border;
+        font-family:  $form-font;
+        margin-right: $form-items-margin;
+    }
+    .btn{
+        border: $form-border;
+        font-family:  $form-font;
+        margin-right: $form-items-margin;
+        cursor: pointer;
+
+    }
+    .btn.btn-primary {
+        background-color: white;
+    }
+    .btn.btn-secondary {
+        background-color: #ff8f34;
+    }
+    
+    .btn.btn-disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .lbl {
+        border: none;
+        font-family:  $form-font;
+        margin-right: $form-items-margin;
+        cursor: text;
+    }
+    .hidden{
+        display:none;
+        margin-right: 0px;
+    }
+}
+
+$form2-border: none;
+$form2-items-margin: 1rem;
+$form2-font: 'Roboto', 'Lato', Arial, Helvetica, sans-serif;
+
+.form2 {
+    .txtfield{
+        border: $form2-border;
+        font-family:  $form2-font;
+        margin-right: $form2-items-margin;
+    }
+    .txtfield:focus {
+        border: $form2-border;
+    }
+    .txtfield.correct {
+        font-family: 'Roboto bold', $form2-font;
+        border:3px solid rgba(72, 255, 0, 0.356);
+        color: limegreen;
+    }
+    .txtfield.wrong {
+        font-family: 'Roboto bold', $form2-font;
+        border: 3px solid rgba(255, 0, 0, 0.356);
+        color: red;
+    }
+    .txtfield.correct:hover, .txtfield.wrong:hover {
+        border-width: 3px;
+    }
+    .txtfield:hover{
+        border: $form2-border;
+        border-color: rgba(8, 8, 8, 0.356);
+    }
+    .txtfield.txtfield-disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .submit{
+        border: $form2-border;
+        font-family:  $form2-font;
+        margin-right: $form2-items-margin;
+        cursor: pointer;
+    }
+    .password{
+        border: $form2-border;
+        font-family:  $form2-font;
+        margin-right: $form2-items-margin;
+    }
+    .btn{
+        border: $form2-border;
+        font-family:  $form2-font;
+        margin-right: $form2-items-margin;
+        cursor: pointer;
+
+    }
+    .btn.btn-primary {
+        background-color: white;
+    }
+    .btn.btn-secondary {
+        background-color: #ff8f34;
+    }
+    
+    .btn.btn-disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .lbl {
+        border: none;
+        font-family:  $form2-font;
+        margin-right: $form2-items-margin;
+        cursor: text;
+    }
+    .hidden{
+        display:none;
+        margin-right: 0px;
+    }
+}
+
+// table styles
+.table-primary {
+    font-size: 2.3vh;
+    @media screen and (min-width:45cm) { // computer need smaller font sizes
+        font-size: 1.8vh;
+    }
+    
+    thead {
+        margin-top: 0.7rem;
+        margin-bottom: 50px;
+        font-family: $header-font;
+        font-size: 2.8vh;
+        @media screen and (min-width:45cm) { // computer need smaller font sizes
+            font-size: 2.5vh;
+        }
+    }
+    tbody {
+        
+        font-family: $paragraph-font;
+        margin-top: 10px;
+        th {
+            margin-top: 0.5rem;
+            padding-bottom: 0.3rem;
+            padding-left: 0.3rem;
+        }
+    }
+    tfoot {
+        font-family: $bold-font;
+        margin-top: 10px;
+    }
+}
